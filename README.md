@@ -1,11 +1,7 @@
-# _Sample project_
+# ESP32 sample project with C++ support
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
-
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
-
-
+(Below is short explanation of remaining files in the project folder.
+README.md file in the upper level 'examples' directory for more information about examples.)
 
 ## How to use example
 We encourage the users to use the example as a template for the new projects.
@@ -23,9 +19,20 @@ Below is short explanation of remaining files in the project folder.
 
 ```
 ├── CMakeLists.txt
-├── main
-│   ├── CMakeLists.txt
-│   └── main.c
+├── sdkconfig
+├── main/
+│   ├── CMakeLists.txt
+│   ├── include/
+│   │   └── main.hpp
+│   └── src/
+│       └── main.cpp
+├── bsp/
+│   ├── CMakeLists.txt
+│   ├── include/
+│   │   └── bsp_xxx.hpp
+│   └── src/
+│       └── bsp_xxx.cpp
+├── build/                     Build output directory
 └── README.md                  This is the file you are currently reading
 ```
 Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
