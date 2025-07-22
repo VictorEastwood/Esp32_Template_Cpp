@@ -1,6 +1,5 @@
 #include "bsp_ledc.hpp"
 
-
 // void blink_task()
 // {
 //     static const char *blink_task_tag = "blink_task";
@@ -27,7 +26,6 @@
 
 //     }
 // }
-
 
 #define LEDC_TIMER_DEFAULT LEDC_TIMER_0
 #define LEDC_MODE_DEFAULT LEDC_LOW_SPEED_MODE
@@ -152,7 +150,7 @@ namespace BSP
     void LEDC::set_duty_percent(float duty_percent)
     {
         // 检查百分比范围
-        if (duty_percent < 0.0f )
+        if (duty_percent < 0.0f)
         {
             duty_percent = 0.0f; // 限制占空比在最小值范围内
         }
@@ -164,14 +162,14 @@ namespace BSP
         // 计算实际占空比值
         uint32_t max_duty = (1 << ledc_timer_cfg.duty_resolution) - 1;
         uint32_t duty = (uint32_t)(duty_percent * max_duty);
-        ESP_ERROR_CHECK(ledc_set_duty(ledc_channel_cfg.speed_mode, ledc_channel_cfg.channel, duty)  );
+        ESP_ERROR_CHECK(ledc_set_duty(ledc_channel_cfg.speed_mode, ledc_channel_cfg.channel, duty));
         ESP_ERROR_CHECK(ledc_update_duty(ledc_channel_cfg.speed_mode, ledc_channel_cfg.channel));
     }
     void LEDC::set_pulse_width(float ms)
     {
         // 计算占空比
         float duty_percent = ms / (1000.0f / ledc_timer_cfg.freq_hz);
-        if (duty_percent < 0.0f )
+        if (duty_percent < 0.0f)
         {
             duty_percent = 0.0f; // 限制占空比在最小值范围内
         }

@@ -6,7 +6,7 @@ extern "C"
 {
 #endif
 
-// C Includes
+    // C Includes
 
 #ifdef __cplusplus
 }
@@ -18,12 +18,10 @@ namespace BSP
     class TEMPLATE
     {
     public:
-
         TEMPLATE();
         ~TEMPLATE();
 
     private:
-
     };
 }
 

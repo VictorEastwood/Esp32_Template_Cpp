@@ -36,14 +36,12 @@ namespace BSP
         void launch_thread(void (*task_function)());
         void launch_thread(const esp_pthread_cfg_t *cfg, void (*task_function)());
         esp_pthread_cfg_t pthread_cfg;
-        
-
 
     private:
-    const char *name;
-    int core_id;
-    int stack;
-    int prio;
+        const char *name;
+        int core_id;
+        int stack;
+        int prio;
     };
 
 }
