@@ -8,6 +8,7 @@ void blink_task()
 {
     static const char *blink_thread_tag = "blink_thread";
     static uint8_t s_led_state = 0;
+        // 获取当前tick时间作为基准
     BSP::GPIO led(CONFIG_BLINK_GPIO, GPIO_MODE_OUTPUT);
     while (1)
     {
@@ -15,6 +16,7 @@ void blink_task()
         led.set_level(s_led_state);
         s_led_state = !s_led_state;
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
     }
 }
 
