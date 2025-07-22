@@ -15,8 +15,6 @@ extern "C"
 #include <esp_log.h>
 #include "bsp_gpio.hpp"
 #include "bsp_thread.hpp"
-
-
-
+#include "bsp_ledc.hpp"
 
 #endif // MAIN_HPP
