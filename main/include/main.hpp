@@ -9,16 +9,14 @@ extern "C"
 #ifdef __cplusplus
 }
 #endif
-#include <thread>
-#include <chrono>
-#include <memory>
-#include <string>
-#include <sstream>
-#include <esp_pthread.h>
+#include <iostream>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 #include <esp_log.h>
-#include <iostream>
 #include "bsp_gpio.hpp"
-#include <sdkconfig.h>
+#include "bsp_thread.hpp"
+
+
+
+
 #endif // MAIN_HPP
